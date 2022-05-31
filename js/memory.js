@@ -3,22 +3,15 @@ let arrayAnimaliNormal = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝'
 let arrayAnimaliHard = ['🦖', '🐳', '🐢', '🐙', '🐞', '🐻', '🦈', '🦂', '🐲', '🦅', '🦃', '🦒', '🐌', '🐜', '🐟', '🐧', '🦕', '🐊', '🦖', '🐳', '🐢', '🐙', '🐞', '🐻', '🦈', '🦂', '🐲', '🦅', '🦃', '🦒', '🐌', '🐜', '🐟', '🐧', '🐊', '🦕'];
 let arrayComparison = [];
 
-let intervalFirst;
-let intervalSecond;
-let sec = 59; 
-let min = 1;
-let minScore = 3;
-let secScore = 59;
+let interval;
+let sec = 0; 
+let min = 2;
 
 let snd_select = new Audio('snd/snd_select.mp3');
 let snd_correct = new Audio('snd/snd_correct.mp3');
 let snd_startgame = new Audio('snd/snd_startgame.mp3');
 let snd_victory = new Audio('snd/snd_victory.mp3');
 let snd_gameover = new Audio('snd/snd_gameover.mp3');
-
-let mobile = window.matchMedia('(max-width: 420px)');
-let tablet = window.matchMedia('(max-width: 600px)');
-let desktop = window.matchMedia('(min-width: 601px)');
 
 const start = document.querySelector('.text-center .start');
 const timer = document.querySelector('.text-center .timer');
@@ -234,12 +227,12 @@ function gameInitHard() {
 
 //#region ---------- Timer & Print Functions --------------
 
-function timerInit() {   // Primo Timer  - Countdown della partita
+function timerInit() {   // Countdown della partita
 
-    sec--;         // i secondi decrescono al richiamo della funzione
-    if(sec <= 0) { // secondi sono inferiori/uguali a 0
-        min--;     // scendono i minuti
-        sec = 59;  // si ricaricano i sec
+    sec--;          // i secondi decrescono al richiamo della funzione
+    if(sec <= -1) { // arriva a 0 e poi a -1 
+        min--;      // scendono i minuti
+        sec = 59;   // si ricaricano i sec a 59 (non 60)
     }
 
     printTimer();
@@ -247,47 +240,37 @@ function timerInit() {   // Primo Timer  - Countdown della partita
     if(min <= -1) {      // -1 = game over
         timerStop();     // ferma intervallo
         printGameOver(); // stampa game over     
-        min = 1;         // ripristina valori iniziali
-        sec = 59;       
-    } 
-}
-
-function timerScore() {  // Secondo Timer - Fisso per calcolo best score
-
-    secScore--;         
-    if(secScore <= 0) { 
-        minScore--;    
-        secScore = 59;  
-    }
-
-    if(min <= -1) {    // -1 = game over
-        timerStop();   // ferma intervallo   
-        minScore = 3;  // ripristina valori iniziali
-        secScore = 59; 
+        min = 2;         // ripristina valori iniziali
+        sec = 0;       
     } 
 }
 
 function timerStart() {
-    min = 1;      // ripristina valori iniziali
-    sec = 59; 
-    minScore = 3; // raddoppiato valore per sottrazione
-    secScore = 59;
-    intervalFirst = setInterval(timerInit, 1000);
-    intervalSecond = setInterval(timerScore, 1000);
+    min = 2;  // ripristina valori iniziali
+    sec = 0; 
+    interval = setInterval(timerInit, 1000);
 }
 
 function timerStop() {
-    clearInterval(intervalFirst);  // stampato a video
-    clearInterval(intervalSecond); // non stampato a video
+    clearInterval(interval);
 }
 
 function clearTimer() {  // Cancella il testo nel div
     timer.innerHTML = '';
 }
 
-function printTimer() { // tempo stampato con intervallo
-    console.log(intervalFirst, intervalSecond);
+function printTimer() { // tempo rimanente stampato
     timer.innerHTML = 'Time: ' + +min + ' min ' + +sec + ' sec';
+}
+
+function printResult() {
+    snd_correct.pause();
+    snd_victory.play();
+    grid.style.pointerEvents = 'none';
+
+    let minResult = (1 - +min); // valore fisso - valore stampato
+    let secResult = (60 - +sec); 
+    timer.innerHTML = 'Congratulations you won!<br>Finished in: ' + minResult + ' min ' + secResult + ' sec';
 }
 
 function printGameOver() {
@@ -296,15 +279,16 @@ function printGameOver() {
     timer.innerHTML = 'Game Over. You lose!';
 }
 
-function printResult() {
-    snd_correct.pause();
-    snd_victory.play();
-    grid.style.pointerEvents = 'none';
+/* function printMoves() { // stampa numero di mosse
 
-    let timeLeft = (+min) + (+sec);               // op. dal primo timer, con print
-    let timeScore = (+minScore) + (+secScore);    // op. dal secondo timer, senza print
-    timer.innerHTML = 'Congratulations you won!<br>Score: ' + (timeScore-timeLeft);
 }
+const icon = document.getElementsByClassName('icon');
+let clickCount = 0;
+
+icon.addEventListener('click', function() {
+    clickCount += 1;
+    console.log(clickCount);
+}); */
 
 //#endregion
 
@@ -370,6 +354,7 @@ function easyResult() {   // Mostra risultato Easy
         timerStop(); 
         clearTimer();
         printResult(); 
+        printMoves();
     }
 }
 
@@ -381,6 +366,7 @@ function normalResult() { // Mostra risultato Normal
         timerStop(); 
         clearTimer();
         printResult(); 
+        printMoves();
     }
 }
 
@@ -392,6 +378,7 @@ function hardResult() {   // Mostra risultato Hard
         timerStop(); 
         clearTimer();
         printResult(); 
+        printMoves();
     }
 }
 
