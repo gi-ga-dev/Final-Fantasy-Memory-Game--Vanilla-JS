@@ -6,6 +6,7 @@ let arrayComparison = [];
 let interval;
 let sec = 0; 
 let min = 2;
+let clickCount = 0;
 
 let snd_select = new Audio('snd/snd_select.mp3');
 let snd_correct = new Audio('snd/snd_correct.mp3');
@@ -13,9 +14,10 @@ let snd_startgame = new Audio('snd/snd_startgame.mp3');
 let snd_victory = new Audio('snd/snd_victory.mp3');
 let snd_gameover = new Audio('snd/snd_gameover.mp3');
 
+const grid = document.getElementById('griglia');
 const start = document.querySelector('.text-center .start');
 const timer = document.querySelector('.text-center .timer');
-const grid = document.getElementById('griglia');
+const moves = document.querySelector('.text-center .moves');
 const found = document.getElementsByClassName('icon show find disabled');
 
 document.body.onload = gamePreview(); // al caricamento della pagina chiama la funzione e genera il contenuto
@@ -33,6 +35,7 @@ function startEasy() {   // Easy Difficulty Button
 
 function restartEasy() {
     snd_victory.pause();
+    snd_gameover.pause();
     snd_startgame.play();
     stop();
     timerStop();  
@@ -52,6 +55,7 @@ function startNormal() { // Normal Difficulty Button
 
 function restartNormal() {
     snd_victory.pause();
+    snd_gameover.pause();
     snd_startgame.play();
     stop();
     timerStop();      // stop all'intervallo precedente
@@ -71,6 +75,7 @@ function startHard() {  // Hard Difficulty Button
 
 function restartHard() {
     snd_victory.pause();
+    snd_gameover.pause();
     snd_startgame.play();
     stop();
     timerStop();     
@@ -88,7 +93,7 @@ function gamePreview() { // Schermata Preview del gioco senza input
     timer.innerHTML = 'Memory Game: 2 minutes to win!';
     
     /* ---- Creazione button easy ----- */
-
+    
     let btnEasy = document.createElement('input');
     btnEasy.type = 'button';
     btnEasy.id = 'btnEasy';
@@ -116,6 +121,7 @@ function gamePreview() { // Schermata Preview del gioco senza input
     
     grid.style.pointerEvents = 'none';                 // i div non si possono cliccare
     grid.innerHTML = '';                               // pulisce eventuale contenuto  
+    moves.style.display = 'none';                      // nasconde il div delle mosse
     for(i=0; i<24; i++) {                              // div placeholders
         let divCont = document.createElement('div');          
         let divIcon = document.createElement('div');          
@@ -139,7 +145,8 @@ function gameInitEasy() {
     arrayComparison = [];
     var arrayShuffle = shuffle(arrayAnimaliEasy);                      
     grid.innerHTML = '';                                 
-    grid.style.pointerEvents = 'initial';                
+    grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
+    moves.style.display = 'block';        // il div delle mosse torna visibile           
 
     for(i=0; i<12; i++) { // creazione 12 div
         let divCont = document.createElement('div');    
@@ -154,7 +161,8 @@ function gameInitEasy() {
     for (i=0; i<icons.length; i++) {                       
         icons[i].addEventListener('click', displayIcon);   
         icons[i].addEventListener('click', easyResult); 
-    }                                    
+        icons[i].addEventListener('click', printMoves);  // icons[i] ritorna la lista dei div
+    }  
 }
 
 function gameInitNormal() {
@@ -172,7 +180,8 @@ function gameInitNormal() {
     arrayComparison = [];
     var arrayShuffle = shuffle(arrayAnimaliNormal);      // gli passo la funzione shuffle con all'interno le icone                
     grid.innerHTML = '';                                 // pulisco tutto il contenuto
-    grid.style.pointerEvents = 'initial';                // sono in grado di cliccare i div
+    grid.style.pointerEvents = 'initial';                // i div tornano cliccabili
+    moves.style.display = 'block';                       // il div delle mosse torna visibile 
 
     for(i=0; i<24; i++) {                                // creazione 24 div
         let divCont = document.createElement('div');     // div contenitore
@@ -184,9 +193,10 @@ function gameInitNormal() {
 
     var icon = document.getElementsByClassName("icon");
     var icons = [...icon];
-    for (i=0; i<icons.length; i++) {                       // itera array passato nella var icons
-        icons[i].addEventListener('click', displayIcon);   // e cicla due funzioni contemporaneamente
+    for (i=0; i<icons.length; i++) {                      // itera array passato nella var icons
+        icons[i].addEventListener('click', displayIcon);  // e cicla varie funzioni contemporaneamente
         icons[i].addEventListener('click', normalResult); // visualizza risultato solo con 24 risp esatte
+        icons[i].addEventListener('click', printMoves);   // ritorna numero mosse e stampa ad ogni click sui div
     }                                    
 }
 
@@ -205,7 +215,8 @@ function gameInitHard() {
     arrayComparison = [];
     var arrayShuffle = shuffle(arrayAnimaliHard);                      
     grid.innerHTML = '';                                 
-    grid.style.pointerEvents = 'initial';                
+    grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
+    moves.style.display = 'block';      // il div delle mosse torna visibile                 
 
     for(i=0; i<36; i++) { // creazione 36 div
         let divCont = document.createElement('div');    
@@ -220,6 +231,7 @@ function gameInitHard() {
     for (i=0; i<icons.length; i++) {                       
         icons[i].addEventListener('click', displayIcon);   
         icons[i].addEventListener('click', hardResult); 
+        icons[i].addEventListener('click', printMoves);
     }                                    
 }
 
@@ -253,14 +265,27 @@ function timerStart() {
 
 function timerStop() {
     clearInterval(interval);
+    /* clickCount = 0; // reset al conteggio mosse */
 }
 
 function clearTimer() {  // Cancella il testo nel div
     timer.innerHTML = '';
 }
 
-function printTimer() { // tempo rimanente stampato
+function clearMoves() {
+    moves.innerHTML = '';
+}
+
+/* ------------------------------------------------------- */
+
+function printTimer() { // tempo rimanente e mosse stampate in-game
     timer.innerHTML = 'Time: ' + +min + ' min ' + +sec + ' sec';
+}
+
+function printMoves() { // stampa numero mosse ad ogni click sui div
+    clickCount += 0.5;
+    moves.innerHTML = 'Number of Moves: ' + parseInt(clickCount); // stampato in-game
+    console.log(parseInt(clickCount));
 }
 
 function printResult() {
@@ -271,24 +296,15 @@ function printResult() {
     let minResult = (1 - +min); // valore fisso - valore stampato
     let secResult = (60 - +sec); 
     timer.innerHTML = 'Congratulations you won!<br>Finished in: ' + minResult + ' min ' + secResult + ' sec';
+    moves.innerHTML = moves.value; // prende valore numero mosse da printMoves e stampa
 }
 
 function printGameOver() {
     snd_gameover.play();
-    grid.style.pointerEvents = 'none'; // rende i div non cliccabili
+    grid.style.pointerEvents = 'none';
+    moves.style.display = 'none';
     timer.innerHTML = 'Game Over. You lose!';
 }
-
-/* function printMoves() { // stampa numero di mosse
-
-}
-const icon = document.getElementsByClassName('icon');
-let clickCount = 0;
-
-icon.addEventListener('click', function() {
-    clickCount += 1;
-    console.log(clickCount);
-}); */
 
 //#endregion
 
@@ -346,39 +362,32 @@ function displayIcon() {  // Comparazione icone e mostra carte
     }
 }
 
-function easyResult() {   // Mostra risultato Easy
+function displayResult() { // Set di funzioni
+    grid.style.pointerEvents = 'none';
+    stop();
+    timerStop(); 
+    clearTimer();
+    printResult();
+}
+
+function easyResult() {    // Mostra risultato Easy
 
     if (found.length==12) {
-        grid.style.pointerEvents = 'none';
-        stop();
-        timerStop(); 
-        clearTimer();
-        printResult(); 
-        printMoves();
+        displayResult();
     }
 }
 
-function normalResult() { // Mostra risultato Normal
+function normalResult() {  // Mostra risultato Normal
 
-    if (found.length==24) {                // se hai trovato tutte le carte
-        grid.style.pointerEvents = 'none'; // rende i div non cliccabili
-        stop();
-        timerStop(); 
-        clearTimer();
-        printResult(); 
-        printMoves();
+    if (found.length==24) { // se hai trovato tutte le carte
+        displayResult();
     }
 }
 
-function hardResult() {   // Mostra risultato Hard
+function hardResult() {    // Mostra risultato Hard
 
     if (found.length==36) {               
-        grid.style.pointerEvents = 'none';
-        stop();
-        timerStop(); 
-        clearTimer();
-        printResult(); 
-        printMoves();
+        displayResult();
     }
 }
 

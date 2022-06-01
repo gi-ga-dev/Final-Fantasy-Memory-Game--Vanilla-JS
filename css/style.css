@@ -36,12 +36,11 @@ body {
     border-radius: 5px;
 }
 
-.timer {
+.timer, .moves {
     background-color: rgba(255, 255, 255,0.5);
-    display: inline-block;
+    display: block;
     padding: 5px 35px;
     font-size: 2em;
-    border-radius: 5px;
 }
 
 @keyframes strike { /* animazione quando si indovina */
@@ -160,7 +159,7 @@ body {
         font-size: 20px;
         padding: 5px 9px;
     }
-    .timer {
+    .timer, .moves {
         font-size: 1.4em;
         padding: 5px 20px;
     }
@@ -207,7 +206,7 @@ body {
         font-size: 20px;
         padding: 5px 9px;
     }
-    .timer {
+    .timer, .moves {
         font-size: 0.9em;
         padding: 5px 35px;
     }
