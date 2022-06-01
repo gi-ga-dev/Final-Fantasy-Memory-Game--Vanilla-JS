@@ -104,19 +104,23 @@ body {
     height: 100px;
 }
 
-#btnEasy, #btnNormal, #btnHard, #btnMenu {
+#btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
     animation: touch 0.5 linear;
     color: black;
     font-size: 30px;
     text-align: center;
     margin-top: 10px;
-    padding: 10px 80px;
+    padding: 10px 50px;
     background-color: rgb(255, 119, 0);
     border: 1px solid #3889c4;
     border-radius: 5px;
 }
 
-#btnEasy:hover, #btnNormal:hover, #btnHard:hover {
+#btnMenu, #btnMute, #btnUnmute {
+    padding: 10px;
+}
+
+#btnEasy:hover, #btnNormal:hover, #btnHard:hover, #btnMenu:hover, #btnMute:hover, #btnUnmute:hover {
     background-color: orangered;
 }
 
@@ -155,7 +159,7 @@ body {
         width: 72px;
         height: 72px;
     }
-    #btnEasy, #btnNormal, #btnHard, #btnMenu {
+    #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
         font-size: 20px;
         padding: 5px 9px;
     }
@@ -202,7 +206,7 @@ body {
         width: 42px;
         height: 42px;
     }
-    #btnEasy, #btnNormal, #btnHard, #btnMenu {
+    #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
         font-size: 20px;
         padding: 5px 9px;
     }

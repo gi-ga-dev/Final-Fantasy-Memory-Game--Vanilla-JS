@@ -14,6 +14,12 @@ let snd_startgame = new Audio('snd/snd_startgame.mp3');
 let snd_victory = new Audio('snd/snd_victory.mp3');
 let snd_gameover = new Audio('snd/snd_gameover.mp3');
 
+snd_select.volume = 0.3; // valori audio di default
+snd_correct.volume = 0.3;
+snd_startgame.volume = 0.3;
+snd_victory.volume = 0.3;
+snd_gameover.volume = 0.3;
+
 const grid = document.getElementById('griglia');
 const start = document.querySelector('.text-center .start');
 const timer = document.querySelector('.text-center .timer');
@@ -82,6 +88,16 @@ function restartHard() {
 
 //#region ------ Game Initialization & Buttons Creation ----------
 
+/* ---- Creazione button Mute / Unmute Audio ----- */
+
+function muteAudio() {
+
+}
+
+function unmuteAudio() {
+
+}
+
 function gamePreview() { // Schermata Preview del gioco senza input
 //@desc creo i buttons nella preview e li modifico in-game cosi' da non creare buttons ogni volta che clicco
     
@@ -127,7 +143,56 @@ function gamePreview() { // Schermata Preview del gioco senza input
     btnHard.value = 'Hard';                       
     btnHard.onclick = function() {startHard();}   
     start.appendChild(btnHard);  
+
+    /* ---- Creazione button Mute/Unmute ----- */
+
+    generateBtn1();
+
+    function generateBtn1() {
+        let btnMute = document.createElement('input');
+        btnMute.type = 'button';
+        btnMute.id = 'btnMute';
+        btnMute.value = 'Mute Audio';
+        btnMute.onclick = function(){
+            btnMute.remove(); // al click rimuovo il button
+            muteVolume();     // muto il volume
+            generateBtn2();   // genero secondo button 
+        }
+        start.appendChild(btnMute);
+    }
+
+    function generateBtn2() {
+
+        let btnUnmute = document.createElement('input');
+        btnUnmute.type = 'button';
+        btnUnmute.id = 'btnUnmute';
+        btnUnmute.value = 'Unmute Audio';
+        btnUnmute.onclick = function(){
+            btnUnmute.remove(); // al click rimuovo il button        
+            unmuteVolume();     // riattivo il volume
+            generateBtn1();     // genero primo button 
+        }
+        start.appendChild(btnUnmute);
+    }
+
+    function muteVolume() {
+        snd_select.volume = 0;
+        snd_correct.volume = 0;
+        snd_startgame.volume = 0;
+        snd_victory.volume = 0;
+        snd_gameover.volume = 0;
+    }
+
+    function unmuteVolume() {
+        snd_select.volume = 0.3;
+        snd_correct.volume = 0.3;
+        snd_startgame.volume = 0.3;
+        snd_victory.volume = 0.3;
+        snd_gameover.volume = 0.3;
+    }
     
+    /* ------------------------------------- */
+
     grid.style.pointerEvents = 'none';                 // i div non si possono cliccare
     grid.innerHTML = '';                               // pulisce eventuale contenuto  
     moves.style.display = 'none';                      // nasconde il div delle mosse
@@ -297,7 +362,6 @@ function printTimer() { // tempo rimanente e mosse stampate in-game
 function printMoves() { // stampa numero mosse ad ogni click sui div
     clickCount += 0.5;
     moves.innerHTML = 'Number of Moves: ' + parseInt(clickCount); // stampato in-game
-    console.log(parseInt(clickCount));
 }
 
 function printResult() {
