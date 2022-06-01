@@ -24,64 +24,58 @@ document.body.onload = gamePreview(); // al caricamento della pagina chiama la f
 
 //#region ---------- Buttons onclick functions ----------------
 
-function startEasy() {   // Easy Difficulty Button
+function startFuncSet() { // Set di funzioni Start
     snd_startgame.play();
-    timerStop(); 
-    clearTimer();
-    gameInitEasy();  
-    printTimer();
-    timerStart();
+    timerStop();  // stop all'intervallo precedente
+    clearTimer(); // pulizia div timer
+    printTimer(); // stampa intervallo
+    timerStart(); // caricamento nuovo intervallo
 }
 
-function restartEasy() {
+function restartFuncSet() { // Set di funzioni Restart
     snd_victory.pause();
     snd_gameover.pause();
     snd_startgame.play();
-    stop();
-    timerStop();  
-    clearTimer(); 
+    stop();       // stop al caricamento della pagina
+    timerStop();  // stop all'intervallo precedente
+    clearTimer(); // pulizia div timer
+    clearMoves(); // pulizia div moves e clickCount reset
+    timerStart(); // caricamento nuovo intervallo
+}
+
+/* ---------------------------------------- */
+
+function startEasy() {   // Easy Difficulty Button
+    startFuncSet();
     gameInitEasy();
-    timerStart(); 
 }
 
 function startNormal() { // Normal Difficulty Button
-    snd_startgame.play();
-    timerStop();      // stop all'intervallo precedente
-    clearTimer();     // pulizia del div
-    gameInitNormal(); // caricamento contenuto del gioco
-    printTimer();     // stampa il timer
-    timerStart();     // caricamento nuovo intervallo
-}
 
-function restartNormal() {
-    snd_victory.pause();
-    snd_gameover.pause();
-    snd_startgame.play();
-    stop();
-    timerStop();      // stop all'intervallo precedente
-    clearTimer();     // pulizia del div
-    gameInitNormal(); // caricamento contenuto del gioco
-    timerStart();     // caricamento nuovo intervallo
+    startFuncSet();
+    gameInitNormal();
 }
 
 function startHard() {  // Hard Difficulty Button
-    snd_startgame.play();
-    timerStop();     
-    clearTimer();     
-    gameInitHard(); 
-    printTimer();
-    timerStart();    
+    startFuncSet();
+    gameInitHard();     
+}
+
+/* ---------------------------------------- */
+
+function restartEasy() {
+    restartFuncSet(); // Set di funzioni
+    gameInitEasy();   // caricamento contenuto del gioco 
+}
+
+function restartNormal() {
+    restartFuncSet(); // Set di funzioni    
+    gameInitNormal(); // caricamento contenuto del gioco     
 }
 
 function restartHard() {
-    snd_victory.pause();
-    snd_gameover.pause();
-    snd_startgame.play();
-    stop();
-    timerStop();     
-    clearTimer();   
-    gameInitHard();
-    timerStart();   
+    restartFuncSet(); // Set di funzioni  
+    gameInitHard();   // caricamento contenuto del gioco
 }
 
 //#endregion
@@ -92,6 +86,20 @@ function gamePreview() { // Schermata Preview del gioco senza input
 //@desc creo i buttons nella preview e li modifico in-game cosi' da non creare buttons ogni volta che clicco
     
     timer.innerHTML = 'Memory Game: 2 minutes to win!';
+    
+    /* ---- Creazione button Menu' principale ----- */
+
+    let btnMenu = document.createElement('input');
+    btnMenu.type = 'button';
+    btnMenu.id = 'btnMenu';
+    btnMenu.value = 'Main Menu';                       
+    btnMenu.onclick = function() {
+        snd_startgame.play();
+        stop(); 
+        window.location.reload();
+    }   
+    start.appendChild(btnMenu);
+    btnMenu.style.display = 'none';
 
     /* ---- Creazione button easy ----- */
     
@@ -142,18 +150,7 @@ function gameInitEasy() {
     restartBtnNormal.style.display = 'none'; 
     restartBtnHard.style.display = 'none';    
     restartBtnEasy.onclick = function() {restartEasy();}
-
-    /* ---- Creazione button Menu' principale ----- */
-
-    let btnMenu = document.createElement('input');
-    btnMenu.type = 'button';
-    btnMenu.id = 'btnMenu';
-    btnMenu.value = 'Main Menu';                       
-    btnMenu.onclick = function() {
-        stop(); 
-        window.location.reload();
-    }   
-    start.appendChild(btnMenu);
+    btnMenu.style.display = 'initial';
 
     arrayComparison = [];
     var arrayShuffle = shuffle(arrayAnimaliEasy);                      
@@ -189,6 +186,7 @@ function gameInitNormal() {
     restartBtnEasy.style.display = 'none';               // Nascondo il button easy
     restartBtnHard.style.display = 'none';               // Nascondo il button hard
     restartBtnNormal.onclick = function() {restartNormal();}
+    btnMenu.style.display = 'initial';
 
     arrayComparison = [];
     var arrayShuffle = shuffle(arrayAnimaliNormal);      // gli passo la funzione shuffle con all'interno le icone                
@@ -224,12 +222,13 @@ function gameInitHard() {
     restartBtnEasy.style.display = 'none'; 
     restartBtnNormal.style.display = 'none'; 
     restartBtnHard.onclick = function() {restartHard();}
+    btnMenu.style.display = 'initial';
 
     arrayComparison = [];
     var arrayShuffle = shuffle(arrayAnimaliHard);                      
     grid.innerHTML = '';                                 
     grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
-    moves.style.display = 'block';      // il div delle mosse torna visibile                 
+    moves.style.display = 'block';        // il div delle mosse torna visibile                 
 
     for(i=0; i<36; i++) { // creazione 36 div
         let divCont = document.createElement('div');    
@@ -278,15 +277,15 @@ function timerStart() {
 
 function timerStop() {
     clearInterval(interval);
-    /* clickCount = 0; // reset al conteggio mosse */
 }
 
-function clearTimer() {  // Cancella il testo nel div
-    timer.innerHTML = '';
+function clearTimer() {
+    timer.innerHTML = ''; // pulisco div timer
 }
 
 function clearMoves() {
-    moves.innerHTML = '';
+    clickCount = 0;       // reset al conteggio mosse
+    moves.innerHTML = ''; // pulisco div moves
 }
 
 /* ------------------------------------------------------- */
@@ -305,7 +304,6 @@ function printResult() {
     snd_correct.pause();
     snd_victory.play();
     grid.style.pointerEvents = 'none';
-
     let minResult = (1 - +min); // valore fisso - valore stampato
     let secResult = (60 - +sec); 
     timer.innerHTML = 'Congratulations you won!<br>Finished in: ' + minResult + ' min ' + secResult + ' sec';
@@ -374,6 +372,8 @@ function displayIcon() {  // Comparazione icone e mostra carte
         }
     }
 }
+
+/* ------------------------------------------------- */
 
 function displayResult() { // Set di funzioni
     grid.style.pointerEvents = 'none';
