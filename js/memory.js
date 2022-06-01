@@ -89,9 +89,10 @@ function restartHard() {
 //#region ------ Game Initialization & Buttons Creation ----------
 
 function gamePreview() { // Schermata Preview del gioco senza input
+//@desc creo i buttons nella preview e li modifico in-game cosi' da non creare buttons ogni volta che clicco
     
     timer.innerHTML = 'Memory Game: 2 minutes to win!';
-    
+
     /* ---- Creazione button easy ----- */
     
     let btnEasy = document.createElement('input');
@@ -141,6 +142,18 @@ function gameInitEasy() {
     restartBtnNormal.style.display = 'none'; 
     restartBtnHard.style.display = 'none';    
     restartBtnEasy.onclick = function() {restartEasy();}
+
+    /* ---- Creazione button Menu' principale ----- */
+
+    let btnMenu = document.createElement('input');
+    btnMenu.type = 'button';
+    btnMenu.id = 'btnMenu';
+    btnMenu.value = 'Main Menu';                       
+    btnMenu.onclick = function() {
+        stop(); 
+        window.location.reload();
+    }   
+    start.appendChild(btnMenu);
 
     arrayComparison = [];
     var arrayShuffle = shuffle(arrayAnimaliEasy);                      

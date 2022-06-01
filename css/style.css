@@ -104,7 +104,7 @@ body {
     height: 100px;
 }
 
-#btnEasy, #btnNormal, #btnHard {
+#btnEasy, #btnNormal, #btnHard, #btnMenu {
     animation: touch 0.5 linear;
     color: black;
     font-size: 30px;
@@ -155,7 +155,7 @@ body {
         width: 72px;
         height: 72px;
     }
-    #btnEasy, #btnNormal, #btnHard {
+    #btnEasy, #btnNormal, #btnHard, #btnMenu {
         font-size: 20px;
         padding: 5px 9px;
     }
@@ -202,7 +202,7 @@ body {
         width: 42px;
         height: 42px;
     }
-    #btnEasy, #btnNormal, #btnHard {
+    #btnEasy, #btnNormal, #btnHard, #btnMenu {
         font-size: 20px;
         padding: 5px 9px;
     }
