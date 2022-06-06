@@ -10,12 +10,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: unset;
-    padding-top: 5px;
     margin: auto;
 }
 .container {
     padding: 10px;
-    width: 900px;
+    width: 1280px;
     margin: auto;
     background-color:rgba(50,128,138, 0.5);
 }
@@ -29,8 +28,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 10px;
-    column-gap: 35px;
     padding-top: 10px;
     margin-top: 5px;
     border-radius: 5px;
@@ -60,9 +57,8 @@ body {
 }
 
 .icon {
-    width: 100px;
-    height: 100px;
-    font-size: 70px;
+    width: 115px;
+    height: 115px;
     text-align: center;
     visibility: visible !important;
     opacity: 0;
@@ -75,8 +71,15 @@ body {
     background-size: cover;
     border: 1px solid #3889c4;
     border-radius: 5px;
-    width: 100px; /* la grandezza del div determina la hitbox del mouse */
-    height: 100px;
+    width: 115px;
+    height: 115px;
+    margin: 10px;
+    padding: 0;
+}
+
+#griglia>div img {
+    width: 115px;
+    height: 115px;
 }
 
 .show {
@@ -86,23 +89,23 @@ body {
     visibility: visible;
     animation-duration: .5s;
     border-radius: 5px;
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
 }
 
 .find {
     animation: strike 0.3s linear;
     background-color: rgba(247, 212, 16, 0.56);
     border: none;
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
 }
 
 .disabled {
     pointer-events: none;
     cursor: wait;
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
 }
 
 #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
@@ -125,44 +128,60 @@ body {
     background-color: orangered;
 }
 
-@media (max-width: 600px) { /* Tablet */
-    body {
-        margin-top: 10px;
-        background-repeat: unset;
-    }
+/* @media (max-width: 1300px) { 
+
     .container {
-        width: 400px;
+        width: 1280px;
     }
     .icon-grid {
         row-gap: 0;
         column-gap: 0;
-    }
-    .icon {
-        width: 72px;
-        height: 72px;
-        font-size: 50px;
+        margin-top: 20px;
     }
     #griglia>div {
         margin: 10px;
-        width: 72px;
-        height: 72px;
+        padding: 0;
+        width: 115px; 
+        height: 115px;
     }
-    .show { /* setta hitbox completa */
-        width: 72px;
-        height: 72px;
+    #griglia>div img, .icon, .show, .find, .disabled {
+        width: 115px;
+        height: 115px;
     }
-    .find {
-        border: none;
-        width: 72px;
-        height: 72px;
+
+} */
+
+@media (max-width: 900px) { /* Tablet */
+    body {
+        background-repeat: unset;
     }
-    .disabled {
-        width: 72px;
-        height: 72px;
+    .container {
+        width: 690px;
+    }
+    .icon-grid {
+        row-gap: 0;
+        column-gap: 0;
+        padding: 10px;
+        margin-top: 50px;
+    }
+    #griglia>div {
+        margin: 10px;
+        padding: 0;
+        width: 90px; /* la grandezza del div determina la hitbox del mouse */
+        height: 90px;
+    }
+    #griglia>div img, .icon, .show, .find, .disabled {
+        width: 90px;
+        height: 90px;
     }
     #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
         font-size: 20px;
         padding: 5px 9px;
+    }
+    .score-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
     }
     .timer, .moves {
         font-size: 1.4em;
@@ -170,49 +189,41 @@ body {
     }
 }
 
-@media (max-width: 420px) { /* Mobile */
+@media (max-width: 480px) { /* Mobile */
+
     body {
-        margin-top: 50px;
+        margin: 0;
+        padding: 0;
         background-repeat: no-repeat;
         background-color: #07161f;
     }
     .container {
-        width: 230px;
+        width: 370px;
     }
     .icon-grid {
         row-gap: 0;
         column-gap: 0;
-    }
-    .icon {
-        width: 42px;
-        height: 42px;
-        font-size: 27px;
+        padding: 5px;
+        margin-top: 0;
     }
     #griglia>div {
         margin: 5px 5px;
-        width: 42px;
-        height: 42px;
+        padding: 0;
+        width: 70px; /* la grandezza del div determina la hitbox del mouse */
+        height: 70px;
     }
-    .show { /* setta hitbox completa */
-        width: 42px;
-        height: 42px;
+    #griglia>div img, .icon, .show, .find, .disabled {
+        width: 70px;
+        height: 70px;
     }
-    .find {
-        border: none;
-        background-color: rgba(247, 212, 16, 0.56);
-        width: 42px;
-        height: 42px;
-    }
-    .disabled {
-        width: 42px;
-        height: 42px;
+    .text-center {
+        padding: 5px;
     }
     #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
-        font-size: 20px;
-        padding: 5px 9px;
+        font-size: 18px;
+        padding: 2px 8px;
     }
     .timer, .moves {
         font-size: 0.9em;
-        padding: 5px 35px;
     }
 }

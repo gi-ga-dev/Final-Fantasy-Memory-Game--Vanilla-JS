@@ -1,6 +1,7 @@
 let arrayEasy = [ // usare funzione per creare img direttamente in un array
-    createImage('img/9-ifrit.png'), createImage('img/1-anima.png'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
-    createImage('img/9-ifrit.png'), createImage('img/1-anima.png'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg')
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg')
+
 ];
 
 let arrayNormal = [
@@ -22,8 +23,8 @@ let arrayHard = [
 let arrayComparison = [];
 
 let interval;
-let sec = 0; 
-let min = 2;
+let sec = 30; 
+let min = 1;
 let clickCount = 0;
 
 let snd_select = new Audio('snd/snd_select.mp3');
@@ -210,7 +211,7 @@ function gamePreview() { // Schermata Preview del gioco senza input
     grid.style.pointerEvents = 'none';                 // i div non si possono cliccare
     grid.innerHTML = '';                               // pulisce eventuale contenuto  
     moves.style.display = 'none';                      // nasconde il div delle mosse
-    for(i=0; i<24; i++) {                              // div placeholders
+    for(i=0; i<12; i++) {                              // div placeholders
         let divCont = document.createElement('div');          
         let divIcon = document.createElement('div');          
         divIcon.className = 'icon';
@@ -311,7 +312,7 @@ function gameInitHard() {
     grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
     moves.style.display = 'block';        // il div delle mosse torna visibile                 
 
-    for(i=0; i<36; i++) { // creazione 36 div
+    for(i=0; i<36; i++) {
         let divCont = document.createElement('div');    
         let divIcon = document.createElement('div');     
         divIcon.className = 'icon';    
@@ -346,14 +347,14 @@ function timerInit() {   // Countdown della partita
     if(min <= -1) {      // -1 = game over
         timerStop();     // ferma intervallo
         printGameOver(); // stampa game over     
-        min = 2;         // ripristina valori iniziali
-        sec = 0;       
+        min = 1;         // ripristina valori iniziali
+        sec = 30;       
     } 
 }
 
 function timerStart() {
-    min = 2;  // ripristina valori iniziali
-    sec = 0; 
+    min = 1;  // ripristina valori iniziali
+    sec = 30; 
     interval = setInterval(timerInit, 1000);
 }
 
@@ -386,7 +387,7 @@ function printResult() {
     snd_victory.play();
     grid.style.pointerEvents = 'none';
     let minResult = (1 - +min); // valore fisso - valore stampato
-    let secResult = (60 - +sec); 
+    let secResult = (30 - +sec); 
     timer.innerHTML = 'Congratulations you won!<br>Finished in: ' + minResult + ' min ' + secResult + ' sec';
     moves.innerHTML = moves.value; // prende valore numero mosse da printMoves e stampa
 }
