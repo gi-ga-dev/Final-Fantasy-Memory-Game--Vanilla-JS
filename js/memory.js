@@ -1,6 +1,24 @@
-let arrayAnimaliEasy = ['🐵', '🐶', '🐴', '🐺', '🐷', '🐮', '🐵', '🐶', '🐴', '🐺', '🐷', '🐮'];
-let arrayAnimaliNormal = ['🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐰', '🐯', '🐱', '🦉', '🐾', '🦁', '🦋', '🐛', '🐝', '🐬', '🦊', '🐨', '🐯', '🐰'];
-let arrayAnimaliHard = ['🦖', '🐳', '🐢', '🐙', '🐞', '🐻', '🦈', '🦂', '🐲', '🦅', '🦃', '🦒', '🐌', '🐜', '🐟', '🐧', '🦕', '🐊', '🦖', '🐳', '🐢', '🐙', '🐞', '🐻', '🦈', '🦂', '🐲', '🦅', '🦃', '🦒', '🐌', '🐜', '🐟', '🐧', '🐊', '🦕'];
+let arrayEasy = [ // usare funzione per creare img direttamente in un array
+    createImage('img/9-ifrit.png'), createImage('img/1-anima.png'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/9-ifrit.png'), createImage('img/1-anima.png'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg')
+];
+
+let arrayNormal = [
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg')
+];
+
+let arrayHard = [
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
+    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg')
+];
+
 let arrayComparison = [];
 
 let interval;
@@ -88,14 +106,10 @@ function restartHard() {
 
 //#region ------ Game Initialization & Buttons Creation ----------
 
-/* ---- Creazione button Mute / Unmute Audio ----- */
-
-function muteAudio() {
-
-}
-
-function unmuteAudio() {
-
+function createImage(src) { // al lancio della funzione creare un img di 100x100, (arg1 e' la src)
+    var img = new Image(100,100);
+    img.src = src;
+    return img;
 }
 
 function gamePreview() { // Schermata Preview del gioco senza input
@@ -199,7 +213,7 @@ function gamePreview() { // Schermata Preview del gioco senza input
     for(i=0; i<24; i++) {                              // div placeholders
         let divCont = document.createElement('div');          
         let divIcon = document.createElement('div');          
-        divIcon.className = 'icon';                           
+        divIcon.className = 'icon';
         grid.appendChild(divCont).appendChild(divIcon);                    
     }    
 }
@@ -218,25 +232,26 @@ function gameInitEasy() {
     btnMenu.style.display = 'initial';
 
     arrayComparison = [];
-    var arrayShuffle = shuffle(arrayAnimaliEasy);                      
+    var arrayShuffle = shuffle(arrayEasy);                      
     grid.innerHTML = '';                                 
     grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
     moves.style.display = 'block';        // il div delle mosse torna visibile           
 
-    for(i=0; i<12; i++) { // creazione 12 div
-        let divCont = document.createElement('div');    
-        let divIcon = document.createElement('div');     
-        divIcon.className = 'icon';                      
-        grid.appendChild(divCont).appendChild(divIcon);  
-        divIcon.innerHTML = arrayShuffle[i];             
+    for(i=0; i<12; i++) {                                   // creazione 24 div
+        let divCont = document.createElement('div');        // div contenitore
+        let divIcon = document.createElement('div');        // div con icona dentro
+        divIcon.className = 'icon';                         // assegno classe icon
+        divIcon.ondragstart = function() { return false; }; // non permette alle icone di essere spostate                      
+        grid.appendChild(divCont).appendChild(divIcon);     // appendere divCont alla griglia, e divIcon al divCont
+        divIcon.appendChild(arrayShuffle[i]);               // ritorna l'elemento contenuto nell'array (iterato);
     }
 
     var icon = document.getElementsByClassName("icon");
     var icons = [...icon];
-    for (i=0; i<icons.length; i++) {                       
-        icons[i].addEventListener('click', displayIcon);   
-        icons[i].addEventListener('click', easyResult); 
-        icons[i].addEventListener('click', printMoves);  // icons[i] ritorna la lista dei div
+    for (i=0; i<icons.length; i++) {                      // itera array passato nella var icons
+        icons[i].addEventListener('click', displayIcon);  // e cicla varie funzioni contemporaneamente
+        icons[i].addEventListener('click', easyResult);   // visualizza risultato solo con 24 risp esatte
+        icons[i].addEventListener('click', printMoves);   // ritorna numero mosse e stampa ad ogni click sui div
     }  
 }
 
@@ -254,17 +269,18 @@ function gameInitNormal() {
     btnMenu.style.display = 'initial';
 
     arrayComparison = [];
-    var arrayShuffle = shuffle(arrayAnimaliNormal);      // gli passo la funzione shuffle con all'interno le icone                
+    var arrayShuffle = shuffle(arrayNormal);             // gli passo la funzione shuffle con all'interno le icone                
     grid.innerHTML = '';                                 // pulisco tutto il contenuto
     grid.style.pointerEvents = 'initial';                // i div tornano cliccabili
     moves.style.display = 'block';                       // il div delle mosse torna visibile 
 
-    for(i=0; i<24; i++) {                                // creazione 24 div
-        let divCont = document.createElement('div');     // div contenitore
-        let divIcon = document.createElement('div');     // div con icona dentro
-        divIcon.className = 'icon';                      // assegno classe icon
-        grid.appendChild(divCont).appendChild(divIcon);  // assegno il div alla destinazione e assegno le icone
-        divIcon.innerHTML = arrayShuffle[i];             // assegno shuffle(icone) nel div delle icone
+    for(i=0; i<24; i++) {                                   // creazione 24 div
+        let divCont = document.createElement('div');        // div contenitore
+        let divIcon = document.createElement('div');        // div con icona dentro
+        divIcon.className = 'icon';                         // assegno classe icon
+        divIcon.ondragstart = function() { return false; }; // non permette alle icone di essere spostate                      
+        grid.appendChild(divCont).appendChild(divIcon);     // appendere divCont alla griglia, e divIcon al divCont
+        divIcon.appendChild(arrayShuffle[i]);               // ritorna l'elemento contenuto nell'array (iterato);
     }
 
     var icon = document.getElementsByClassName("icon");
@@ -290,7 +306,7 @@ function gameInitHard() {
     btnMenu.style.display = 'initial';
 
     arrayComparison = [];
-    var arrayShuffle = shuffle(arrayAnimaliHard);                      
+    var arrayShuffle = shuffle(arrayHard);                      
     grid.innerHTML = '';                                 
     grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
     moves.style.display = 'block';        // il div delle mosse torna visibile                 
@@ -298,9 +314,10 @@ function gameInitHard() {
     for(i=0; i<36; i++) { // creazione 36 div
         let divCont = document.createElement('div');    
         let divIcon = document.createElement('div');     
-        divIcon.className = 'icon';                      
+        divIcon.className = 'icon';    
+        divIcon.ondragstart = function() { return false; };                  
         grid.appendChild(divCont).appendChild(divIcon);  
-        divIcon.innerHTML = arrayShuffle[i];             
+        divIcon.appendChild(arrayShuffle[i]);                    
     }
 
     var icon = document.getElementsByClassName("icon");
@@ -402,7 +419,7 @@ function shuffle(a) {     // Mischia le icone nell'array
 function displayIcon() {  // Comparazione icone e mostra carte
     var iconsFind = document.getElementsByClassName('find');
     var icon = document.getElementsByClassName("icon");
-    var icons = [...icon];         // '...' operatore per passare array come argomento:
+    var icons = [...icon];         // '...' operatore per passare array come argomento:    
     this.classList.toggle("show"); // mette/toglie la classe show
     arrayComparison.push(this);    //aggiunge l'oggetto cliccato all'array del confronto
     var len = arrayComparison.length;

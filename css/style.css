@@ -71,7 +71,8 @@ body {
 }
 
 #griglia>div {
-    background-color: rgb(251, 250, 214);
+    background: url(../img/back.png);
+    background-size: cover;
     border: 1px solid #3889c4;
     border-radius: 5px;
     width: 100px; /* la grandezza del div determina la hitbox del mouse */
@@ -85,7 +86,7 @@ body {
     visibility: visible;
     animation-duration: .5s;
     border-radius: 5px;
-    width: 100px; /* setta hitbox completa */
+    width: 100px;
     height: 100px;
 }
 
