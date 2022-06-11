@@ -241,6 +241,7 @@ function gameInitEasy() {
     for(i=0; i<12; i++) {                                   // creazione div
         let divCont = document.createElement('div');        // div contenitore
         let divIcon = document.createElement('div');        // div con icona dentro
+        divCont.className = 'iconCont';
         divIcon.className = 'icon';                         // assegno classe icon
         divIcon.ondragstart = function() { return false; }; // non permette alle icone di essere spostate                      
         grid.appendChild(divCont).appendChild(divIcon);     // appendere divCont alla griglia, e divIcon al divCont
@@ -399,10 +400,21 @@ function printResult() {
 }
 
 function printGameOver() {
+    /* const iconCont = document.querySelector('.iconCont'); */
+
     snd_gameover.play();
+    /* grid.innerHTML = ''; */
     grid.style.pointerEvents = 'none';
+    grid.style.background = 'url(../img/gameover.jpg)';
+    grid.style.backgroundSize = 'cover';
+    grid.style.backgroundPosition = 'center';
+
+    iconCont.style.background = 'none';
+    iconCont.style.border = 'none';
+
     moves.style.display = 'none';
     timer.innerHTML = 'Game Over. You lose!';
+
 }
 
 //#endregion
