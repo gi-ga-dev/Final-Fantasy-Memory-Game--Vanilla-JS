@@ -238,7 +238,7 @@ function gameInitEasy() {
     grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
     moves.style.display = 'block';        // il div delle mosse torna visibile           
 
-    for(i=0; i<12; i++) {                                   // creazione 24 div
+    for(i=0; i<12; i++) {                                   // creazione div
         let divCont = document.createElement('div');        // div contenitore
         let divIcon = document.createElement('div');        // div con icona dentro
         divIcon.className = 'icon';                         // assegno classe icon
@@ -275,15 +275,20 @@ function gameInitNormal() {
     grid.style.pointerEvents = 'initial';                // i div tornano cliccabili
     moves.style.display = 'block';                       // il div delle mosse torna visibile 
 
-    for(i=0; i<24; i++) {                                   // creazione 24 div
+    for(i=0; i<24; i++) {                                   // creazione div
         let divCont = document.createElement('div');        // div contenitore
         let divIcon = document.createElement('div');        // div con icona dentro
         divIcon.className = 'icon';                         // assegno classe icon
         divIcon.ondragstart = function() { return false; }; // non permette alle icone di essere spostate                      
         grid.appendChild(divCont).appendChild(divIcon);     // appendere divCont alla griglia, e divIcon al divCont
         divIcon.appendChild(arrayShuffle[i]);               // ritorna l'elemento contenuto nell'array (iterato);
-    }
 
+
+/*         timeoutOne = setTimeout(function() {divIcon.style.opacity = 'initial';}, 100);
+        timeoutTwo = setTimeout(function() {divIcon.style.opacity = '0';}, 3100); */
+        
+    }
+    
     var icon = document.getElementsByClassName("icon");
     var icons = [...icon];
     for (i=0; i<icons.length; i++) {                      // itera array passato nella var icons
@@ -375,6 +380,7 @@ function clearMoves() {
 
 function printTimer() { // tempo rimanente e mosse stampate in-game
     timer.innerHTML = 'Time: ' + +min + ' min ' + +sec + ' sec';
+    moves.innerHTML = 'Number of Moves: ' + parseInt(clickCount); // stampato al partire dell'intervallo (0)
 }
 
 function printMoves() { // stampa numero mosse ad ogni click sui div

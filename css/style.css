@@ -13,15 +13,21 @@ body {
     margin: auto;
 }
 .container {
+    color: rgb(233, 233, 233);
+    background: linear-gradient(135deg, rgba(129,128,128,0.9) 0%, rgba(1,0,0,0.9) 50%, rgba(129,128,128,0.9) 100%);
+    border: 2px solid #3889c4;
     padding: 10px;
     width: 1280px;
     margin: auto;
-    background-color:rgba(50,128,138, 0.5);
 }
 
 .text-center {
     text-align: center;   
     border-radius: 5px; 
+    background: rgb(129,128,128);
+    background: linear-gradient(135deg, rgba(129,128,128,0.9) 0%, rgba(1,0,0,0.9) 50%, rgba(129,128,128,0.9) 100%);
+    border-top: 1px solid #3889c4;
+    color: rgb(233, 233, 233);
 }
 
 .icon-grid {
@@ -31,13 +37,19 @@ body {
     padding-top: 10px;
     margin-top: 5px;
     border-radius: 5px;
+    background: rgb(129,128,128);
+    background: linear-gradient(135deg, rgba(129,128,128,0.9) 0%, rgba(1,0,0,0.9) 50%, rgba(129,128,128,0.9) 100%);
+    border-bottom: 1px solid #3889c4;
 }
 
 .timer, .moves {
-    background-color: rgba(255, 255, 255,0.5);
+    color: rgb(233, 233, 233);
+    background: linear-gradient(135deg, rgba(129,128,128,0.9) 0%, rgba(1,0,0,0.9) 50%, rgba(129,128,128,0.9) 100%);
+    border: 1px solid #3889c4;
     display: block;
     padding: 5px 35px;
-    font-size: 2em;
+    font-size: 1.4em;
+    border-radius: 5px;
 }
 
 @keyframes strike { /* animazione quando si indovina */
@@ -110,46 +122,25 @@ body {
 
 #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
     animation: touch 0.5 linear;
-    color: black;
-    font-size: 30px;
+    font-size: 1.4em;
     text-align: center;
-    margin-top: 10px;
-    padding: 10px 50px;
-    background-color: rgb(255, 119, 0);
+    padding: 8px 40px;
+    margin: 10px 5px 0 5px;
+    color: rgb(233, 233, 233);
+    background: linear-gradient(135deg, rgba(129,128,128,0.9) 0%, rgba(1,0,0,0.9) 50%, rgba(129,128,128,0.9) 100%);
     border: 1px solid #3889c4;
     border-radius: 5px;
 }
 
-#btnMenu, #btnMute, #btnUnmute {
-    padding: 10px;
+.score-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 #btnEasy:hover, #btnNormal:hover, #btnHard:hover, #btnMenu:hover, #btnMute:hover, #btnUnmute:hover {
     background-color: orangered;
 }
-
-/* @media (max-width: 1300px) { 
-
-    .container {
-        width: 1280px;
-    }
-    .icon-grid {
-        row-gap: 0;
-        column-gap: 0;
-        margin-top: 20px;
-    }
-    #griglia>div {
-        margin: 10px;
-        padding: 0;
-        width: 115px; 
-        height: 115px;
-    }
-    #griglia>div img, .icon, .show, .find, .disabled {
-        width: 115px;
-        height: 115px;
-    }
-
-} */
 
 @media (max-width: 900px) { /* Tablet */
     body {
@@ -175,8 +166,9 @@ body {
         height: 90px;
     }
     #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
-        font-size: 20px;
+        font-size: 1.3em;
         padding: 5px 9px;
+        margin: 10px 5px 3px 5px;
     }
     .score-container {
         display: flex;
@@ -184,7 +176,7 @@ body {
         justify-content: center;
     }
     .timer, .moves {
-        font-size: 1.4em;
+        font-size: 1.3em;
         padding: 5px 20px;
     }
 }
@@ -220,8 +212,9 @@ body {
         padding: 5px;
     }
     #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
-        font-size: 18px;
+        font-size: 0.9em;
         padding: 2px 8px;
+        margin: 8px 3px 3px 3px;
     }
     .timer, .moves {
         font-size: 0.9em;
