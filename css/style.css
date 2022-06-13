@@ -6,23 +6,21 @@ html {
   height: 100%; }
 
 body {
-  background: url(../img/background.gif);
-  background-attachment: fixed;
+  background: url(../img/img-background.png);
   background-size: cover;
-  background-repeat: unset;
+  background-position: 50% 85%;
   margin: auto;
   /* ------------- Div Icone Selezionate ------------ */ }
   body .container {
     padding: 10px;
-    width: 1280px;
     margin: auto; }
   body #griglia > div {
     color: #e9e9e9;
-    background: linear-gradient(135deg, rgba(129, 128, 128, 0.9) 0%, rgba(1, 0, 0, 0.9) 50%, rgba(129, 128, 128, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(129, 128, 128, 0.8) 0%, rgba(1, 0, 0, 0.8) 50%, rgba(129, 128, 128, 0.8) 100%);
     border-radius: 5px;
     text-shadow: 0 2px 2px #000;
     border: 2px solid #3889c4;
-    background: url(../img/back.png);
+    background: url(../img/img-backcard.png);
     background-size: cover;
     width: 115px;
     height: 115px;
@@ -39,7 +37,7 @@ body {
     padding-top: 10px;
     margin-top: 5px;
     color: #e9e9e9;
-    background: linear-gradient(135deg, rgba(129, 128, 128, 0.9) 0%, rgba(1, 0, 0, 0.9) 50%, rgba(129, 128, 128, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(129, 128, 128, 0.8) 0%, rgba(1, 0, 0, 0.8) 50%, rgba(129, 128, 128, 0.8) 100%);
     border-radius: 5px;
     text-shadow: 0 2px 2px #000;
     border: 2px solid #3889c4;
@@ -47,7 +45,7 @@ body {
   body .text-center {
     text-align: center;
     color: #e9e9e9;
-    background: linear-gradient(135deg, rgba(129, 128, 128, 0.9) 0%, rgba(1, 0, 0, 0.9) 50%, rgba(129, 128, 128, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(129, 128, 128, 0.8) 0%, rgba(1, 0, 0, 0.8) 50%, rgba(129, 128, 128, 0.8) 100%);
     border-radius: 5px;
     text-shadow: 0 2px 2px #000;
     border: 2px solid #3889c4;
@@ -63,7 +61,7 @@ body {
     font-size: 1.4em;
     cursor: default;
     color: #e9e9e9;
-    background: linear-gradient(135deg, rgba(129, 128, 128, 0.9) 0%, rgba(1, 0, 0, 0.9) 50%, rgba(129, 128, 128, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(129, 128, 128, 0.8) 0%, rgba(1, 0, 0, 0.8) 50%, rgba(129, 128, 128, 0.8) 100%);
     border-radius: 5px;
     text-shadow: 0 2px 2px #000;
     border: 2px solid #3889c4; }
@@ -75,7 +73,7 @@ body {
     padding: 8px 40px;
     margin: 10px 5px 0 5px;
     color: #e9e9e9;
-    background: linear-gradient(135deg, rgba(129, 128, 128, 0.9) 0%, rgba(1, 0, 0, 0.9) 50%, rgba(129, 128, 128, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(129, 128, 128, 0.8) 0%, rgba(1, 0, 0, 0.8) 50%, rgba(129, 128, 128, 0.8) 100%);
     border-radius: 5px;
     text-shadow: 0 2px 2px #000;
     border: 2px solid #3889c4; }
@@ -116,15 +114,12 @@ body {
   body .icon {
     text-align: center;
     visibility: visible !important;
-    opacity: 0;
     cursor: pointer;
     border: none;
     width: 115px;
     height: 115px; }
   body .show {
     animation: touch 4s linear;
-    opacity: 1;
-    visibility: visible;
     animation-duration: .5s;
     border-radius: 5px;
     width: 115px;
@@ -138,46 +133,39 @@ body {
     height: 115px; }
 
 /* ------------- Media Queries ------------ */
-@media (max-width: 900px) {
+@media (max-width: 1280px) {
   /* Tablet */
-  body {
-    background-repeat: unset; }
-    body .container {
-      width: 690px; }
-    body #griglia > div {
-      margin: 10px;
-      padding: 0;
-      width: 90px;
-      height: 90px; }
-    body #griglia > div img, body .icon, body .show, body .find, body .disabled {
-      width: 90px;
-      height: 90px; }
-    body .icon-grid {
-      row-gap: 0;
-      column-gap: 0;
-      padding: 10px;
-      margin-top: 50px; }
-    body .score-container {
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center; }
-    body .timer, body .moves {
-      font-size: 1.3em;
-      padding: 5px 20px; }
-    body #btnEasy, body #btnNormal, body #btnHard, body #btnMenu, body #btnMute, body #btnUnmute {
-      font-size: 1.3em;
-      padding: 5px 9px;
-      margin: 10px 5px 3px 5px; } }
+  body #griglia > div {
+    margin: 10px;
+    padding: 0;
+    width: 90px;
+    height: 90px; }
+  body #griglia > div img, body .icon, body .show, body .find, body .disabled {
+    width: 90px;
+    height: 90px; }
+  body .icon-grid {
+    row-gap: 0;
+    column-gap: 0;
+    padding: 10px;
+    margin-top: 50px; }
+  body .score-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center; }
+  body .timer, body .moves {
+    font-size: 1.3em;
+    padding: 5px 20px; }
+  body #btnEasy, body #btnNormal, body #btnHard, body #btnMenu, body #btnMute, body #btnUnmute {
+    font-size: 1.3em;
+    padding: 5px 9px;
+    margin: 10px 5px 3px 5px; } }
 
 @media (max-width: 480px) {
   /* Mobile */
   body {
     margin: 0;
     padding: 0;
-    background-repeat: no-repeat;
     background-color: #07161f; }
-    body .container {
-      width: 370px; }
     body #griglia > div {
       margin: 5px 5px;
       padding: 0;
@@ -194,7 +182,8 @@ body {
     body .text-center {
       padding: 5px; }
     body .timer, body .moves {
-      font-size: 0.9em; }
+      font-size: 0.9em;
+      padding: 5px; }
     body #btnEasy, body #btnNormal, body #btnHard, body #btnMenu, body #btnMute, body #btnUnmute {
       font-size: 0.9em;
       padding: 2px 8px;

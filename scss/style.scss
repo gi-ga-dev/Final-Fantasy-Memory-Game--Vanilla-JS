@@ -8,19 +8,17 @@ html {
 }
 
 body {
-    background: url(../img/background.gif);
-    background-attachment: fixed;
+    background: url(../img/img-background.png);
     background-size: cover;
-    background-repeat: unset;
+    background-position: 50% 85%;
     margin: auto;
     .container {
         padding: 10px;
-        width: 1280px;
         margin: auto;
     }
     #griglia>div {
         @include saber-theme;
-        background: url(../img/back.png);
+        background: url(../img/img-backcard.png);
         background-size: cover;
         width: 115px;
         height: 115px;
@@ -91,15 +89,12 @@ body {
     .icon {
         text-align: center;
         visibility: visible !important;
-        opacity: 0;
         cursor: pointer;
         border: none;
         @include desktop-size;
     }
     .show {
         animation: touch 4s linear;
-        opacity: 1;
-        visibility: visible;
         animation-duration: .5s;
         border-radius: 5px;
         @include desktop-size;
@@ -107,7 +102,6 @@ body {
     .find {
         animation: strike 0.3s linear;
         border: none;
-
     }
     .disabled {
         pointer-events: none;
@@ -117,13 +111,9 @@ body {
 
 /* ------------- Media Queries ------------ */
 
-@media (max-width: 900px) { /* Tablet */
+@media (max-width: 1280px) { /* Tablet */
 
     body {
-        background-repeat: unset;
-        .container {
-            width: 690px;
-        }
         #griglia>div {
             margin: 10px;
             padding: 0;
@@ -160,11 +150,7 @@ body {
     body {
         margin: 0;
         padding: 0;
-        background-repeat: no-repeat;
         background-color: #07161f;
-        .container {
-            width: 370px;
-        }
         #griglia>div {
             margin: 5px 5px;
             padding: 0;
@@ -184,6 +170,7 @@ body {
         }
         .timer, .moves {
             font-size: 0.9em;
+            padding: 5px;
         }
         #btnEasy, #btnNormal, #btnHard, #btnMenu, #btnMute, #btnUnmute {
             font-size: 0.9em;

@@ -1,4 +1,4 @@
-let arrayEasy = [ // usare funzione per creare img direttamente in un array
+/* let arrayEasy = [
     createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
     createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg')
 
@@ -12,13 +12,66 @@ let arrayNormal = [
 ];
 
 let arrayHard = [
-    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
-    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
-    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
-    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
-    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg'),
-    createImage('img/1-aerith.png'), createImage('img/2-cloud.jpg'), createImage('img/3-sephiroth.png'), createImage('img/4-tifa.jpg'), createImage('img/5-rinoa.jpg'), createImage('img/6-squall.jpg')
+    createImage('img/S1.png'), createImage('img/S2.png'), createImage('img/S3.png'), createImage('img/S4.png'), createImage('img/S5.png'), createImage('img/S6.png'), createImage('img/S7.png'), createImage('img/S8.png'), createImage('img/S9.png'),
+    createImage('img/S10.png'), createImage('img/S11.png'), createImage('img/S12.png'), createImage('img/S13.png'), createImage('img/S14.png'), createImage('img/S15.png'), createImage('img/S16.png'), createImage('img/S17.png'), createImage('img/S18.png'),
+    createImage('img/S1.png'), createImage('img/S2.png'), createImage('img/S3.png'), createImage('img/S4.png'), createImage('img/S5.png'), createImage('img/S6.png'), createImage('img/S7.png'), createImage('img/S8.png'), createImage('img/S9.png'),
+    createImage('img/S10.png'), createImage('img/S11.png'), createImage('img/S12.png'), createImage('img/S13.png'), createImage('img/S14.png'), createImage('img/S15.png'), createImage('img/S16.png'), createImage('img/S17.png'), createImage('img/S18.png')
+]; */
+
+/* -------------------------- */
+
+/* let S1 = createImage('img/S1.png'); */
+
+/* let arrSummons = [    
+    createImage('img/S1.png'), createImage('img/S2.png'), createImage('img/S3.png'), createImage('img/S4.png'), createImage('img/S5.png'), createImage('img/S6.png'), createImage('img/S7.png'), createImage('img/S8.png'), createImage('img/S9.png'), createImage('img/S10.png'), createImage('img/S11.png'), createImage('img/S12.png'), createImage('img/S13.png'), createImage('img/S14.png'), createImage('img/S15.png'), createImage('img/S16.png'), createImage('img/S17.png'), createImage('img/S18.png'), createImage('img/S19.png'), createImage('img/S20.png'), createImage('img/S21.png'), createImage('img/S22.png'), createImage('img/S23.png')
 ];
+
+let arrSummons2 = [    
+    createImage('img/S1.png'), createImage('img/S2.png'), createImage('img/S3.png'), createImage('img/S4.png'), createImage('img/S5.png'), createImage('img/S6.png'), createImage('img/S7.png'), createImage('img/S8.png'), createImage('img/S9.png'), createImage('img/S10.png'), createImage('img/S11.png'), createImage('img/S12.png'), createImage('img/S13.png'), createImage('img/S14.png'), createImage('img/S15.png'), createImage('img/S16.png'), createImage('img/S17.png'), createImage('img/S18.png'), createImage('img/S19.png'), createImage('img/S20.png'), createImage('img/S21.png'), createImage('img/S22.png'), createImage('img/S23.png')
+];
+
+let arrMonsters = [    
+    createImage('img/M1.png'), createImage('img/M2.png'), createImage('img/M3.png'), createImage('img/M4.png'), createImage('img/M5.png'), createImage('img/M6.png')
+];
+
+let arrMonsters2 = [    
+    createImage('img/M1.png'), createImage('img/M2.png'), createImage('img/M3.png'), createImage('img/M4.png'), createImage('img/M5.png'), createImage('img/M6.png')
+];
+
+let arrCharacters = [    
+    createImage('img/C1.png'), createImage('img/C2.png'), createImage('img/C3.png'), createImage('img/C4.png'), createImage('img/C5.png'), createImage('img/C6.png'), createImage('img/C7.png'), createImage('img/C8.png'), createImage('img/C9.png'), createImage('img/C10.png'), createImage('img/C11.png'), createImage('img/C12.png'), createImage('img/C13.png'), createImage('img/C14.png'), createImage('img/C15.png'), createImage('img/C16.png'), createImage('img/C17.png'), createImage('img/C18.png'), createImage('img/C19.png'), createImage('img/C20.png'), createImage('img/C21.png'), createImage('img/C22.png'), createImage('img/C23.png'), createImage('img/C24.png')
+];
+
+let arrCharacters2 = [    
+    createImage('img/C1.png'), createImage('img/C2.png'), createImage('img/C3.png'), createImage('img/C4.png'), createImage('img/C5.png'), createImage('img/C6.png'), createImage('img/C7.png'), createImage('img/C8.png'), createImage('img/C9.png'), createImage('img/C10.png'), createImage('img/C11.png'), createImage('img/C12.png'), createImage('img/C13.png'), createImage('img/C14.png'), createImage('img/C15.png'), createImage('img/C16.png'), createImage('img/C17.png'), createImage('img/C18.png'), createImage('img/C19.png'), createImage('img/C20.png'), createImage('img/C21.png'), createImage('img/C22.png'), createImage('img/C23.png'), createImage('img/C24.png')
+]; */
+
+/* -------------------------- */
+
+let arrMonsters = [    
+    createImage('img/M1.png'), createImage('img/M1.png'), createImage('img/M2.png'), createImage('img/M2.png'), createImage('img/M3.png'), createImage('img/M3.png'), createImage('img/M4.png'), createImage('img/M4.png'), createImage('img/M5.png'), createImage('img/M5.png'), createImage('img/M6.png'), createImage('img/M6.png')
+];
+
+let arrCharacters = [    
+    createImage('img/C1.png'), createImage('img/C1.png'), createImage('img/C2.png'), createImage('img/C2.png'), createImage('img/C3.png'), createImage('img/C3.png'), createImage('img/C4.png'), createImage('img/C4.png'), createImage('img/C5.png'), createImage('img/C5.png'), createImage('img/C6.png'), createImage('img/C6.png'), createImage('img/C7.png'), createImage('img/C7.png'), createImage('img/C8.png'), createImage('img/C8.png'), createImage('img/C9.png'), createImage('img/C9.png'), createImage('img/C10.png'), createImage('img/C10.png'), createImage('img/C11.png'), createImage('img/C11.png'), createImage('img/C12.png'), createImage('img/C12.png')
+];
+
+let arrSummons = [    
+    createImage('img/S1.png'), createImage('img/S1.png'), createImage('img/S2.png'), createImage('img/S2.png'), createImage('img/S3.png'), createImage('img/S3.png'), createImage('img/S4.png'), createImage('img/S4.png'), createImage('img/S5.png'), createImage('img/S5.png'), createImage('img/S6.png'), createImage('img/S6.png'), createImage('img/S7.png'), createImage('img/S7.png'), createImage('img/S8.png'), createImage('img/S8.png'), createImage('img/S9.png'), createImage('img/S9.png'), createImage('img/S10.png'), createImage('img/S10.png'), createImage('img/S11.png'), createImage('img/S11.png'), createImage('img/S12.png'), createImage('img/S12.png'), createImage('img/S13.png'), createImage('img/S13.png'), createImage('img/S14.png'), createImage('img/S14.png'), createImage('img/S15.png'), createImage('img/S15.png'), createImage('img/S16.png'), createImage('img/S16.png'), createImage('img/S17.png'), createImage('img/S17.png'), createImage('img/S18.png'), createImage('img/S18.png')
+];
+
+let arrList= [arrMonsters, arrCharacters, arrSummons];    // array contenitore di altri array
+
+/* let arrListConcat = concatList(arrList);                  // funzione che concat arrayList
+function concatList(list) {                               // list (nome ass. ad arg1) gli verra' ritornato l'array listR
+    let listR = [];                                       // array vuoto
+    for (let index = 0; index < list.length; index++) {   // cicla fino alla lunghezza dell'arg1 (che sara' arrList), quindi 106img
+        for (let i = 0; i < list[index].length; i++) {    // secondo ciclo fino alla lunghezza dell'indice
+            listR.push(list[index][i])                    
+        }
+    }
+    return listR
+} */
 
 let arrayComparison = [];
 
@@ -40,10 +93,16 @@ snd_victory.volume = 0.3;
 snd_gameover.volume = 0.3;
 
 const grid = document.getElementById('griglia');
+const text = document.getElementsByClassName('.text-center');
 const start = document.querySelector('.text-center .start');
 const timer = document.querySelector('.text-center .timer');
 const moves = document.querySelector('.text-center .moves');
 const found = document.getElementsByClassName('icon show find disabled');
+const disabled = document.getElementsByClassName('icon disabled');
+
+const mobile = window.matchMedia('(max-width: 480px)');
+const tablet = window.matchMedia('(max-width: 1280px)');
+const desktop = window.matchMedia('(min-width: 1281px)');
 
 document.body.onload = gamePreview(); // al caricamento della pagina chiama la funzione e genera il contenuto
 
@@ -71,8 +130,14 @@ function restartFuncSet() { // Set di funzioni Restart
 /* ---------------------------------------- */
 
 function startEasy() {   // Easy Difficulty Button
-    startFuncSet();
-    gameInitEasy();
+    snd_startgame.play();
+    timerStop();  // stop all'intervallo precedente
+    clearTimer(); // pulizia div timer
+
+    gameInitEasy(); // genero 12 div con card e shuffle
+
+    printTimer(); // stampa intervallo
+    timerStart(); // caricamento nuovo intervallo
 }
 
 function startNormal() { // Normal Difficulty Button
@@ -206,18 +271,42 @@ function gamePreview() { // Schermata Preview del gioco senza input
         snd_gameover.volume = 0.3;
     }
     
-    /* ------------------------------------- */
+    /* --- Preview Img (aggiunta dinamicamente) --- */
 
     grid.style.pointerEvents = 'none';                 // i div non si possono cliccare
     grid.innerHTML = '';                               // pulisce eventuale contenuto  
     moves.style.display = 'none';                      // nasconde il div delle mosse
-    for(i=0; i<12; i++) {                              // div placeholders
-        let divCont = document.createElement('div');          
-        let divIcon = document.createElement('div');          
-        divIcon.className = 'icon';
-        grid.appendChild(divCont).appendChild(divIcon);                    
+    
+    let previewImg = document.createElement('img');
+    previewImg.id = 'previewImg';
+    grid.appendChild(previewImg);
+
+    /* --------- Media Queries ----------- */
+
+    function mediaQ() { 
+        if (desktop.matches) {       // se la media matcha
+            previewImg.src = '../img/img-preview-portrait.png';
+            previewImg.style.width = '100%';
+            previewImg.style.height = '600px';
+        } else if (tablet.matches) {
+            previewImg.src = '../img/img-preview-landscape.png';
+            previewImg.style.width = '100%';
+            previewImg.style.height = '100%';
+        } else if (mobile.matches) {
+            previewImg.src = '../img/img-preview-landscape.png';
+            previewImg.style.width = '100%';
+            previewImg.style.height = '100%';
+        }
     }    
+
+    mediaQ(desktop, tablet, mobile); // chiama la funzione all'avvio
+    desktop.addListener(mediaQ);     // attacca la funzione al cambiamento dello stato
+    tablet.addListener(mediaQ);
+    mobile.addListener(mediaQ);
 }
+
+/* let timeoutOne;
+let timeoutTwo; */
 
 function gameInitEasy() {
 
@@ -233,7 +322,8 @@ function gameInitEasy() {
     btnMenu.style.display = 'initial';
 
     arrayComparison = [];
-    var arrayShuffle = shuffle(arrayEasy);                      
+    var arrayShuffle = shuffle(arrList[0]); // shuffle delle img dell'arr selez.                 
+
     grid.innerHTML = '';                                 
     grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
     moves.style.display = 'block';        // il div delle mosse torna visibile           
@@ -248,6 +338,26 @@ function gameInitEasy() {
         divIcon.appendChild(arrayShuffle[i]);               // ritorna l'elemento contenuto nell'array (iterato);
     }
 
+    /* ---------- Timeout con cicli ----------- */
+
+    var icon = document.getElementsByClassName("icon");
+    timeoutOne = setTimeout(function() {
+        // creo un ciclo per riuscire ad iterare ogni elem. di icon
+        for(var i=0; i<icon.length; i++){
+            icon[i].style.opacity = '1'; // per ogni icona applica style
+            icon[i].style.pointerEvents = 'none';
+        }
+    }, 100); 
+    
+    timeoutTwo = setTimeout(function() {
+        for(var i=0; i<icon.length; i++){
+            icon[i].style.opacity = '0'; 
+            icon[i].style.pointerEvents = 'initial';
+        }
+    }, 5100); 
+
+    /* --------------------------------- */
+
     var icon = document.getElementsByClassName("icon");
     var icons = [...icon];
     for (i=0; i<icons.length; i++) {                      // itera array passato nella var icons
@@ -255,6 +365,24 @@ function gameInitEasy() {
         icons[i].addEventListener('click', easyResult);   // visualizza risultato solo con 24 risp esatte
         icons[i].addEventListener('click', printMoves);   // ritorna numero mosse e stampa ad ogni click sui div
     }  
+
+    /* --------- Media Queries ----------- */
+    
+    function mediaQ() { 
+        if (mobile.matches) { // in ordine da mobile a desktop
+            grid.style.width = '370px';
+        } else if (tablet.matches) {
+            grid.style.width = '690px';
+        } else if (desktop.matches) {
+            grid.style.width = '900px';
+        }
+    }    
+
+    mediaQ(mobile, tablet, desktop); // chiama la funzione all'avvio
+    mobile.addListener(mediaQ);      // attacca la funzione al cambiamento dello stato
+    tablet.addListener(mediaQ);
+    desktop.addListener(mediaQ);   
+
 }
 
 function gameInitNormal() {
@@ -271,7 +399,7 @@ function gameInitNormal() {
     btnMenu.style.display = 'initial';
 
     arrayComparison = [];
-    var arrayShuffle = shuffle(arrayNormal);             // gli passo la funzione shuffle con all'interno le icone                
+    var arrayShuffle = shuffle(arrList[1]);             // gli passo la funzione shuffle con all'interno le icone                
     grid.innerHTML = '';                                 // pulisco tutto il contenuto
     grid.style.pointerEvents = 'initial';                // i div tornano cliccabili
     moves.style.display = 'block';                       // il div delle mosse torna visibile 
@@ -282,12 +410,7 @@ function gameInitNormal() {
         divIcon.className = 'icon';                         // assegno classe icon
         divIcon.ondragstart = function() { return false; }; // non permette alle icone di essere spostate                      
         grid.appendChild(divCont).appendChild(divIcon);     // appendere divCont alla griglia, e divIcon al divCont
-        divIcon.appendChild(arrayShuffle[i]);               // ritorna l'elemento contenuto nell'array (iterato);
-
-
-/*         timeoutOne = setTimeout(function() {divIcon.style.opacity = 'initial';}, 100);
-        timeoutTwo = setTimeout(function() {divIcon.style.opacity = '0';}, 3100); */
-        
+        divIcon.appendChild(arrayShuffle[i]);               // ritorna l'elemento contenuto nell'array (iterato);       
     }
     
     var icon = document.getElementsByClassName("icon");
@@ -296,7 +419,24 @@ function gameInitNormal() {
         icons[i].addEventListener('click', displayIcon);  // e cicla varie funzioni contemporaneamente
         icons[i].addEventListener('click', normalResult); // visualizza risultato solo con 24 risp esatte
         icons[i].addEventListener('click', printMoves);   // ritorna numero mosse e stampa ad ogni click sui div
-    }                                    
+    }     
+    
+    /* --------- Media Queries ----------- */
+    
+    function mediaQ() { 
+        if (mobile.matches) { // in ordine da mobile a desktop
+            grid.style.width = '370px';
+        } else if (tablet.matches) {
+            grid.style.width = '690px';
+        } else if (desktop.matches) {
+            grid.style.width = '1200px';
+        }
+    }    
+
+    mediaQ(mobile, tablet, desktop); // chiama la funzione all'avvio
+    mobile.addListener(mediaQ);      // attacca la funzione al cambiamento dello stato
+    tablet.addListener(mediaQ);
+    desktop.addListener(mediaQ);
 }
 
 function gameInitHard() {
@@ -313,7 +453,7 @@ function gameInitHard() {
     btnMenu.style.display = 'initial';
 
     arrayComparison = [];
-    var arrayShuffle = shuffle(arrayHard);                      
+    var arrayShuffle = shuffle(arrList[2]);                      
     grid.innerHTML = '';                                 
     grid.style.pointerEvents = 'initial'; // i div tornano cliccabili
     moves.style.display = 'block';        // il div delle mosse torna visibile                 
@@ -333,7 +473,24 @@ function gameInitHard() {
         icons[i].addEventListener('click', displayIcon);   
         icons[i].addEventListener('click', hardResult); 
         icons[i].addEventListener('click', printMoves);
-    }                                    
+    }   
+    
+    /* --------- Media Queries ----------- */
+    
+    function mediaQ() { 
+        if (mobile.matches) { // in ordine da mobile a desktop
+            grid.style.width = '370px';
+        } else if (tablet.matches) {
+            grid.style.width = '690px';
+        } else if (desktop.matches) {
+            grid.style.width = '1280px';
+        }
+    }    
+
+    mediaQ(mobile, tablet, desktop); // chiama la funzione all'avvio
+    mobile.addListener(mediaQ);      // attacca la funzione al cambiamento dello stato
+    tablet.addListener(mediaQ);
+    desktop.addListener(mediaQ);
 }
 
 //#endregion
@@ -389,43 +546,65 @@ function printMoves() { // stampa numero mosse ad ogni click sui div
     moves.innerHTML = 'Number of Moves: ' + parseInt(clickCount); // stampato in-game
 }
 
-function printResult() {
+function printResult() { // Schermata Vittoria
     snd_correct.pause();
     snd_victory.play();
-    grid.style.pointerEvents = 'none';
+    // ciclo per selez. icone trovate e renderle non cliccabili
+    for(var i=0; i<found.length; i++){
+        found[i].style.pointerEvents = 'none';
+    }
     let minResult = (1 - +min); // valore fisso - valore stampato
     let secResult = (30 - +sec); 
-    timer.innerHTML = 'Congratulations you won!<br>Finished in: ' + minResult + ' min ' + secResult + ' sec';
+    timer.innerHTML = 'Congrats! Finished in: ' + minResult + ' min ' + secResult + ' sec';
     moves.innerHTML = moves.value; // prende valore numero mosse da printMoves e stampa
 }
 
-function printGameOver() {
-    /* const iconCont = document.querySelector('.iconCont'); */
-
+function printGameOver() { // Schermata Gameover
     snd_gameover.play();
-    /* grid.innerHTML = ''; */
-    grid.style.pointerEvents = 'none';
-    grid.style.background = 'url(../img/gameover.jpg)';
-    grid.style.backgroundSize = 'cover';
-    grid.style.backgroundPosition = 'center';
-
-    iconCont.style.background = 'none';
-    iconCont.style.border = 'none';
-
-    moves.style.display = 'none';
+    grid.style.pointerEvents = 'none';                 // i div non si possono cliccare
+    grid.innerHTML = '';                               // pulisce eventuale contenuto  
+    moves.style.display = 'none';                      // nasconde il div delle mosse
     timer.innerHTML = 'Game Over. You lose!';
 
+    /* --- Gameover Img (aggiunta dinamicamente) --- */
+
+    let gameoverImg = document.createElement('img');
+    gameoverImg.id = 'gameoverImg';
+    grid.appendChild(gameoverImg); 
+
+    /* --------- Media Queries ----------- */
+
+    function mediaQ() { 
+        if (desktop.matches) {   
+            gameoverImg.src = '../img/img-gameover-portrait.png';    
+            gameoverImg.style.width = '100%';
+            gameoverImg.style.height = '600px';
+        } else if (tablet.matches) {
+            gameoverImg.src = '../img/img-gameover-landscape.png';
+            gameoverImg.style.width = '100%';
+            gameoverImg.style.height = '100%';
+        } else if (mobile.matches) {
+            gameoverImg.src = '../img/img-gameover-landscape.png';
+            gameoverImg.style.width = '100%';
+            gameoverImg.style.height = '100%';
+        }
+    }    
+
+    mediaQ(desktop, tablet, mobile); // chiama la funzione all'avvio
+    desktop.addListener(mediaQ);     // attacca la funzione al cambiamento dello stato
+    tablet.addListener(mediaQ);
+    mobile.addListener(mediaQ);
 }
 
 //#endregion
 
 //#region ---- Shuffle, Mostra icone & Risultati Partita ----
 
-function shuffle(a) {     // Mischia le icone nell'array
-    var currentIndex = a.length;
+function shuffle(a) {            // Mischia le icone nell'array
+    var currentIndex = a.length; // currentIndex = lunghezza dell'array dentro arg di shuffle
     var temporaryValue, randomIndex;
 
-    while (currentIndex !== 0) {
+    while (currentIndex !== 0) { 
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
         temporaryValue = a[currentIndex];
@@ -440,30 +619,49 @@ function displayIcon() {  // Comparazione icone e mostra carte
     var icon = document.getElementsByClassName("icon");
     var icons = [...icon];         // '...' operatore per passare array come argomento:    
     this.classList.toggle("show"); // mette/toglie la classe show
+    this.style.opacity = '1';
     arrayComparison.push(this);    //aggiunge l'oggetto cliccato all'array del confronto
     var len = arrayComparison.length;
     snd_select.play();
     
     if (len === 2) { // se nel confronto ci sono due elementi.  // qui sotto ho aggiunto una comparazione con se stesso, altrimenti cliccando 2 volte la stessa si bloccava
         if (arrayComparison[0].innerHTML === arrayComparison[1].innerHTML && arrayComparison[0] !== arrayComparison[1]) { // se uguali aggiunge la classe find
-            arrayComparison[0].classList.add("find", "disabled");
+            arrayComparison[0].classList.add("find", "disabled"); // hai trovato due elementi uguali
+            arrayComparison[0].style.pointerEvents = 'none';      // i due elementi comparati non sono piu cliccabili
             arrayComparison[1].classList.add("find", "disabled");
+            arrayComparison[1].style.pointerEvents = 'none';
+
+            // ciclo per selez. icone trovate e renderle non cliccabili
+            for(var i=0; i<found.length; i++){
+                found[i].style.pointerEvents = 'none';
+            }
+
             arrayComparison = [];
             snd_select.pause();
             snd_correct.play();
 
         } else { // altrimenti (ha sbagliato)  
             icons.forEach(function(item) {  
-                item.classList.add('disabled'); // aggiunge solo la classe disabled
+                item.classList.add('disabled');               // aggiunge solo la classe disabled
+                                                              // ciclo per riuscire ad iterare una HTML Coll. di div
+                for(var i=0; i<disabled.length; i++){         // lungo pari alla lunghezza icone disabled
+                    disabled[i].style.pointerEvents = 'none'; // dopo 2 elem. clicc. disattivo classe icon disabled
+                }
                 snd_select.play();
             });
             
-            setTimeout(function() {             // timeout rimuove la classe show per nasconderli
-                arrayComparison[0].classList.remove("show");
+            setTimeout(function() {                              // timeout per nasconderli
+                arrayComparison[0].classList.remove("show");     // rimuovo classe show
+                arrayComparison[0].style.opacity = '0';          // opacita torna a 0
+                for(var i=0; i<disabled.length; i++){            // lungo pari alla lunghezza icone disabled
+                    disabled[i].style.pointerEvents = 'initial'; // i div disabled tornano cliccabili
+                    console.log(disabled.length);
+                }
                 arrayComparison[1].classList.remove("show");
+                arrayComparison[1].style.opacity = '0';
                 icons.forEach(function(item) {
                     item.classList.remove('disabled');
-                    for (var i = 0; i < iconsFind.length; i++) {
+                    for (var i = 0; i < iconsFind.length; i++) {  // per ogni icona trovata agg. classe disabled
                         iconsFind[i].classList.add("disabled");
                     }
                 });
@@ -472,8 +670,6 @@ function displayIcon() {  // Comparazione icone e mostra carte
         }
     }
 }
-
-/* ------------------------------------------------- */
 
 function displayResult() { // Set di funzioni
     grid.style.pointerEvents = 'none';
