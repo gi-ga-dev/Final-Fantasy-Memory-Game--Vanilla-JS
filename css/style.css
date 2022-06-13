@@ -54,7 +54,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center; }
-  body .timer, body .moves {
+  body .memorize, body .timer, body .moves {
     display: block;
     padding: 5px 35px;
     margin: 0 5px;
@@ -83,23 +83,17 @@ body {
 @keyframes strike {
   /* animazione quando si indovina */
   0% {
-    transform: rotate(0deg) scale(100%);
-    box-shadow: 20px 20px 50px 10px orange inset; }
+    transform: rotate(0deg) scale(100%); }
   20% {
-    transform: rotate(45deg) scale(110%);
-    box-shadow: 20px 20px 50px 10px orange inset; }
+    transform: rotate(45deg) scale(110%); }
   40% {
-    transform: rotate(90deg) scale(120%);
-    box-shadow: 20px 20px 50px 10px orangered inset; }
+    transform: rotate(90deg) scale(120%); }
   60% {
-    transform: rotate(135deg) scale(140%);
-    box-shadow: 20px 20px 50px 10px orangered inset; }
+    transform: rotate(135deg) scale(140%); }
   80% {
-    transform: rotate(180deg) scale(115%);
-    box-shadow: 20px 20px 50px 10px orange inset; }
+    transform: rotate(180deg) scale(115%); }
   100% {
-    transform: rotate(270deg) scale(105%);
-    box-shadow: 20px 20px 50px 10px orange inset; } }
+    transform: rotate(270deg) scale(105%); } }
 
 @keyframes touch {
   /* animazione al tocco delle card */
@@ -152,7 +146,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center; }
-  body .timer, body .moves {
+  body .memorize, body .timer, body .moves {
     font-size: 1.3em;
     padding: 5px 20px; }
   body #btnEasy, body #btnNormal, body #btnHard, body #btnMenu, body #btnMute, body #btnUnmute {
@@ -181,7 +175,7 @@ body {
       margin-top: 0; }
     body .text-center {
       padding: 5px; }
-    body .timer, body .moves {
+    body .memorize, body .timer, body .moves {
       font-size: 0.9em;
       padding: 5px; }
     body #btnEasy, body #btnNormal, body #btnHard, body #btnMenu, body #btnMute, body #btnUnmute {
