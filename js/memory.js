@@ -200,15 +200,15 @@ function gamePreview() { // Schermata Preview del gioco senza input
 
     function mediaQ() { 
         if (desktop.matches) {       // se la media matcha
-            previewImg.src = 'img/img-preview-portrait.png';
+            previewImg.src = './img/img-preview-portrait.png';
             previewImg.style.width = '100%';
             previewImg.style.height = '600px';
         } else if (tablet.matches) {
-            previewImg.src = 'img/img-preview-landscape.png';
+            previewImg.src = './img/img-preview-landscape.png';
             previewImg.style.width = '100%';
             previewImg.style.height = '100%';
         } else if (mobile.matches) {
-            previewImg.src = 'img/img-preview-landscape.png';
+            previewImg.src = './img/img-preview-landscape.png';
             previewImg.style.width = '100%';
             previewImg.style.height = '100%';
         }
@@ -538,15 +538,15 @@ function printGameOver() { // Schermata Gameover
 
     function mediaQ() { 
         if (desktop.matches) {   
-            gameoverImg.src = 'img/img-gameover-portrait.png';    
+            gameoverImg.src = './img/img-gameover-portrait.png';    
             gameoverImg.style.width = '100%';
             gameoverImg.style.height = '600px';
         } else if (tablet.matches) {
-            gameoverImg.src = 'img/img-gameover-landscape.png';
+            gameoverImg.src = './img/img-gameover-landscape.png';
             gameoverImg.style.width = '100%';
             gameoverImg.style.height = '100%';
         } else if (mobile.matches) {
-            gameoverImg.src = 'img/img-gameover-landscape.png';
+            gameoverImg.src = './img/img-gameover-landscape.png';
             gameoverImg.style.width = '100%';
             gameoverImg.style.height = '100%';
         }
