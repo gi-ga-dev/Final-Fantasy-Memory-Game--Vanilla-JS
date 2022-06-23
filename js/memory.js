@@ -95,7 +95,7 @@ function createImage(src) { // al lancio della funzione creare un img di 100x100
 function gamePreview() { // Schermata Preview del gioco senza input
 //@desc creo i buttons nella preview e li modifico in-game cosi' da non creare buttons ogni volta che clicco
     
-    timer.innerHTML = 'Memory Game: 2 minutes to win!';
+    timer.innerHTML = 'Memory Game: 1 min 30 sec to win!';
     memorize.style.display = 'none';
     
     /* ---- Creazione button Menu' principale ----- */
