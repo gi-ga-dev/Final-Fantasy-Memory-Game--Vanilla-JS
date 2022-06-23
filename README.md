@@ -30,6 +30,8 @@
 
 <p align="center" dir="auto">- Countdown Timer: 1 min 30 sec.<br></p>
 
+<p align="center" dir="auto">- Number of moves printed on-screen.<br></p>
+
 <p align="center" dir="auto">- Final Fantasy Icons & Sound Effects<br></p>
 
 
