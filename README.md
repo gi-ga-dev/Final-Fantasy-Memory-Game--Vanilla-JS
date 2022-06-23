@@ -34,6 +34,6 @@
 
 
 <p align="center" dir="auto">
-  <img src="https://user-images.githubusercontent.com/77717069/175179110-b1a6777f-ca8d-42d8-8af2-c4f5cc953ca3.png" alt="mem-1" width="350">
-  <img src="https://user-images.githubusercontent.com/77717069/175179112-884482bf-f5b6-42f1-8d4a-ecdca284185b.png" alt="mem-2" width="350">
+  <img src="https://user-images.githubusercontent.com/77717069/175258787-41cec755-737f-4eda-8739-304d0713b9ec.gif" alt="mem-1" width="350">
+  <img src="https://user-images.githubusercontent.com/77717069/175258809-f6dc7d26-d757-4412-a593-cc3087389287.gif" alt="mem-2" width="350">
 </p>
