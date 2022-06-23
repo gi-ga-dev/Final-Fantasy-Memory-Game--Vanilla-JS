@@ -11,6 +11,9 @@
   <a href="https://github.com/gi-ga-dev" rel="nofollow"> 
     <img src="https://user-images.githubusercontent.com/77717069/175134081-60ba259b-b154-4ab4-a360-bde87ce81199.png" alt="js" width="100"> 
   </a> 
+  <a href="https://github.com/gi-ga-dev" target="_blank"> 
+    <img src="https://user-images.githubusercontent.com/77717069/175181462-c557161b-7784-49b7-b28f-9d877e86aff6.png" alt="sass" width="100"> 
+  </a>
 </p>
 
 <h2 align="center" dir="auto"> <b>Project Introduction:</b></h2>
@@ -26,6 +29,8 @@
 <p align="center" dir="auto">- 5 sec timeframe to memorize the cards.<br></p>
 
 <p align="center" dir="auto">- Countdown Timer: 1 min 30 sec.<br></p>
+
+<p align="center" dir="auto">- Final Fantasy Icons & Sound Effects<br></p>
 
 
 <p align="center" dir="auto">
