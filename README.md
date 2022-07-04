@@ -23,7 +23,7 @@
 
 <p align="center" dir="auto">
 - Preview with Difficulty selection buttons:<br><br>
-  Easy: 12 cards | Normal: 24 cards | Hard 36 cards.
+  Easy: 12 cards | Normal: 24 cards | Hard: 36 cards.
 </p>
 
 <p align="center" dir="auto">- 5 sec timeframe to memorize the cards.<br></p>
